@@ -7,8 +7,8 @@ import {CpfCnpjExisteService} from "./cpf-cnpj-existe.service";
 
 @Component({
   selector: 'app-novo-cliente',
-  templateUrl: './novo-cliente.component.html',
-  styleUrls: ['./novo-cliente.component.css']
+  templateUrl: 'novo-cliente.component.html',
+  styleUrls: ['novo-cliente.component.css']
 })
 export class NovoClienteComponent implements OnInit {
 
