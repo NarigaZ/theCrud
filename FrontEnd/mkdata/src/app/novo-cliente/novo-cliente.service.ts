@@ -14,11 +14,11 @@ export class NovoClienteService {
 
   getClientes(nome, ativo):Observable<any> {
     let params = new HttpParams().set('nome', nome).set("ativo", ativo);
-    return this.httpCliente.get( this.baseUrl , {params: params})
+    return this.httpCliente.get( `${this.baseUrl}/clientes` , {params: params})
   }
 
   cadastraCliente(cliente):Observable<any> {
-    return this.httpCliente.post(this.baseUrl, cliente);
+    return this.httpCliente.post(`${this.baseUrl}/clientes`, cliente);
   }
 
   verificaCpfExistente(cpfCnpj: string, id) {
@@ -26,18 +26,18 @@ export class NovoClienteService {
     if (id){
       params = new HttpParams().set('id', id);
     }
-    return this.httpCliente.get(`${this.baseUrl}/cpfCnpjExistente/${cpfCnpj}`, {params: params});
+    return this.httpCliente.get(`${this.baseUrl}/clientes/cpfCnpjExistente/${cpfCnpj}`, {params: params});
   }
 
   excluirCliente(id: any):Observable<any> {
-    return this.httpCliente.delete(`${this.baseUrl}${id}`);
+    return this.httpCliente.delete(`${this.baseUrl}/clientes/${id}`);
   }
 
   getCliente(id: string):Observable<any> {
-    return this.httpCliente.get(`${this.baseUrl}${id}`);
+    return this.httpCliente.get(`${this.baseUrl}/clientes/${id}`);
   }
 
   alteraCliente(cliente: any):Observable<any> {
-    return this.httpCliente.put(`${this.baseUrl}${cliente.id}`, cliente);
+    return this.httpCliente.put(`${this.baseUrl}/clientes/${cliente.id}`, cliente);
   }
 }
