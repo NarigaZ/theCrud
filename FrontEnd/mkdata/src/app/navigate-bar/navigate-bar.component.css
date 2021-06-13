@@ -1,0 +1,26 @@
+#logo {
+  padding-left: 30px;
+}
+
+a { color: inherit; }
+
+.dropBar {
+  padding-left: 50px;
+}
+
+.menuText {
+  font-family: Euclid Circular B, serif;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.dropText {
+  font-family: Euclid Circular B, serif;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+@font-face {
+  font-family: Euclid Circular B;
+  src: local(Euclid Circular B), url("../../assets/fontes/EuclidCircularB-Regular.otf");
+}
