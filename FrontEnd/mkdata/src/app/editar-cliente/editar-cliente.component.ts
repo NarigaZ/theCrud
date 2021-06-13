@@ -105,7 +105,7 @@ export class EditarClienteComponent implements OnInit {
       novoCliente.rgIe = novoCliente.ie
     }
     this.clienteService.alteraCliente(novoCliente).subscribe(() => {
-      console.log('Alterado com Sucesso!')
+      alert('Alterado com Sucesso!')
     }, (error) => {
       alert("Erro");
     });

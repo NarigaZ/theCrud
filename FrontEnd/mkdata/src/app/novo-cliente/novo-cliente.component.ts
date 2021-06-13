@@ -27,6 +27,7 @@ export class NovoClienteComponent implements OnInit {
       cnpj: [''],
       rg: ['',[Validators.required]],
       ie: [''],
+      ativo: ['true'],
       ddd: ['',[Validators.minLength(2)]],
       numero: ['',[Validators.minLength(9)]],
       telefones: this.formBuilder.array([])
@@ -83,7 +84,7 @@ export class NovoClienteComponent implements OnInit {
       novoCliente.rgIe = novoCliente.ie
     }
     this.clienteService.cadastraCliente(novoCliente).subscribe(() => {
-      console.log('Cadastrado')
+      alert('Cadastrado com Sucesso!')
     }, (error) => {
       alert("Erro");
     });
