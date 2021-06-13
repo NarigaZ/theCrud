@@ -11,7 +11,6 @@ import {GeralModule} from "./geral/geral.module";
 import {HttpClientModule} from "@angular/common/http";
 import { ListaClienteComponent } from './lista-cliente/lista-cliente.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {IConfig, NgxMaskModule} from "ngx-mask";
 import { EditarClienteComponent } from './editar-cliente/editar-cliente.component';
 
@@ -34,7 +33,6 @@ const maskConfig: Partial<IConfig> = {
     GeralModule,
     FormsModule,
     HttpClientModule,
-    FontAwesomeModule,
     ReactiveFormsModule,
     NgxMaskModule.forRoot(maskConfig),
   ],

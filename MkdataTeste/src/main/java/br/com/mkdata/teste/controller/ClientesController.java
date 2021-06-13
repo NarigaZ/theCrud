@@ -42,7 +42,7 @@ public class ClientesController {
 	
 	@GetMapping
 	@Cacheable(value = "listaDeClientes")
-	public Page<ClienteDto> lista(@RequestParam(required = false) String nome, @RequestParam(required = false) String ativo,
+	public Page<ClienteDto> lista(@RequestParam(required = false, defaultValue = "") String nome, @RequestParam(required = false, defaultValue = "") String ativo,
 								  @PageableDefault(sort = "nome", direction = Direction.DESC, page = 0, size = 10) Pageable paginacao) {
 
 		Page<Cliente> clientes;

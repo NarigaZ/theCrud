@@ -11,11 +11,11 @@ export class NovoClienteService {
 
   getClientes(nome, ativo):Observable<any> {
     let params = new HttpParams().set('nome', nome).set("ativo", ativo);
-    return this.httpCliente.get('http://localhost:8080/clientes', {params: params})
+    return this.httpCliente.get('http://api/clientes', {params: params})
   }
 
   cadastraCliente(cliente):Observable<any> {
-    return this.httpCliente.post('http://localhost:8080/clientes', cliente);
+    return this.httpCliente.post('http://api/clientes', cliente);
   }
 
   verificaCpfExistente(cpfCnpj: string, id) {
@@ -23,18 +23,18 @@ export class NovoClienteService {
     if (id){
       params = new HttpParams().set('id', id);
     }
-    return this.httpCliente.get(`http://localhost:8080/clientes/cpfCnpjExistente/${cpfCnpj}`, {params: params});
+    return this.httpCliente.get(`http://api/clientes/cpfCnpjExistente/${cpfCnpj}`, {params: params});
   }
 
   excluirCliente(id: any):Observable<any> {
-    return this.httpCliente.delete(`http://localhost:8080/clientes/${id}`);
+    return this.httpCliente.delete(`http://api/clientes/${id}`);
   }
 
   getCliente(id: string):Observable<any> {
-    return this.httpCliente.get(`http://localhost:8080/clientes/${id}`);
+    return this.httpCliente.get(`http://api/clientes/${id}`);
   }
 
   alteraCliente(cliente: any):Observable<any> {
-    return this.httpCliente.put(`http://localhost:8080/clientes/${cliente.id}`, cliente);
+    return this.httpCliente.put(`http://api/clientes/${cliente.id}`, cliente);
   }
 }
