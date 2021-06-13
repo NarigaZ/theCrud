@@ -1,20 +1,18 @@
 import {Component, OnInit} from '@angular/core';
 import {NovoClienteService} from "./novo-cliente.service";
 import {FormArray, FormBuilder, FormGroup, ValidationErrors, Validators} from "@angular/forms";
-import {Cliente} from "../geral/interfaces/cliente";
 import {cpfValidator} from "../geral/validators/cpf.validator";
 import {cnpjValidator} from "../geral/validators/cnpj.validator";
 import {CpfCnpjExisteService} from "./cpf-cnpj-existe.service";
 
 @Component({
-  selector: 'app-novo-pedido',
+  selector: 'app-novo-cliente',
   templateUrl: './novo-cliente.component.html',
   styleUrls: ['./novo-cliente.component.css']
 })
 export class NovoClienteComponent implements OnInit {
 
   novoClienteForm!: FormGroup;
-
 
   constructor(private clienteService: NovoClienteService,
               private formBuilder: FormBuilder,
